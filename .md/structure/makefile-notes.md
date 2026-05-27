@@ -21,6 +21,12 @@
 - `pynq/` submodule 및 `pynq/sdbuild` 스크립트
 - prebuilt rootfs/sdist 다운로드 URL
 
+## `pynq` 의존성 메모
+
+- 루트 `Makefile`은 자체적으로 SD image 툴체인을 모두 구현하지 않고, `pynq/sdbuild`를 호출한다.
+- 따라서 SD image 빌드 성공 여부는 RFSoC-PYNQ 코드뿐 아니라, 체크아웃된 `pynq` submodule 버전에도 영향을 받는다.
+- 실무에서는 RFSoC-PYNQ 변경과 `pynq` submodule 포인터 변경을 구분해 추적하는 것이 좋다.
+
 ## 주요 타깃
 
 - `checkenv_rfsocpynq`: `BOARD`/BSP 존재 확인
