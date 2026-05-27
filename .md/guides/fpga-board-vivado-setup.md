@@ -2,12 +2,14 @@
 
 ## 목적
 
-RFSoC 보드의 base overlay를 기준으로 Vivado 프로젝트를 생성하고 bitstream 재빌드 경로를 정리한다.
+RFSoC 보드의 base overlay 기준으로 Vivado 프로젝트를 생성하고 `.bit/.hwh`를 빌드하는 절차만 다룬다.
 
 ## 범위
 
 - 대상: `RFSoC4x2`, `ZCU208` (저장소 내 base Tcl 존재 확인)
 - 기준 Vivado 버전: `2024.1` (문서 기준)
+- 포함: 프로젝트 생성, bitstream/hwh 생성
+- 제외: 보드 반영, overlay 로딩, 기능 테스트 (별도 문서)
 
 ## 관련 경로
 
@@ -16,10 +18,17 @@ RFSoC 보드의 base overlay를 기준으로 Vivado 프로젝트를 생성하고
 - `boards/ZCU208/base/base.tcl`
 - `boards/ZCU208/base/build_bitstream.tcl`
 
+## 문서 경계
+
+- 보드 반영/overlay 로딩: `fw-setup-deep-dive.md`
+- 노트북 기반 기능 검증: `sw-setup-deep-dive.md`
+- 전체 진행 순서/게이트: `guides/README.md`
+
 ## 빠른 결론
 
 - 저장소에는 `.xpr`가 커밋되어 있지 않다.
 - `base.tcl`로 Vivado 프로젝트를 생성하고, `build_bitstream.tcl` 또는 `make`로 bitstream을 빌드하는 구조다.
+- 보드 기본 이미지에는 prebuilt base overlay가 포함되어 있으므로, 설계 수정/분석 목적이 아니면 재빌드는 필수가 아니다.
 
 ## 절차
 
@@ -60,10 +69,12 @@ source ./build_bitstream.tcl
 make
 ```
 
-### 4) 산출물 확인
+### 4) 산출물 확인 (이 문서의 종료점)
 
 - bitstream (`.bit`)
 - 하드웨어 핸드오프 파일 (`.hwh`)
+
+여기까지 완료하면 빌드 단계 종료이며, 이후 절차는 FW/SW 문서로 진행한다.
 
 ## 참고
 

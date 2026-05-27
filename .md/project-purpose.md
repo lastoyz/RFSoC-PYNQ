@@ -9,9 +9,17 @@
 - RFSoC 보드용 PYNQ 확장 제공
   - RF data converter, clock, overlay 활용을 위한 Python API/라이브러리/드라이버 제공
 - 보드별 베이스 오버레이와 예제 설계 제공
-  - RFSoC4x2, ZCU208(README 기준 지원 보드)
+  - RFSoC4x2, ZCU208, ZCU111 (루트 `README.md` 기준 지원 보드)
 - SD 카드 이미지 및 base overlay 재빌드 경로 제공
   - 보드별 `boards/<BOARD>/base` 아래 Vivado Tcl/Makefile 중심 빌드
+
+## README 기반 프로젝트 개요 요약
+
+- 이 저장소는 "base design 소스 + SD card image 빌드 스크립트"를 함께 제공한다.
+- 호환 기준은 Vivado `2024.1`, PYNQ `v3.1+`이다.
+- 사용자 진입점은 크게 두 가지다.
+  - base overlay만 다시 빌드: `boards/<BOARD>/base`에서 `make`
+  - 보드용 SD image 전체 빌드: 루트에서 `make BOARD=<BOARD>`
 
 ## 왜 FPGA 로직 셋업이 첫 단계인가
 
