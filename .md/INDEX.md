@@ -6,6 +6,7 @@
 
 ## guides
 
+- [Board Setup and Test Guide](./guides/board-setup-and-test-guide.md)
 - [Board Bring-up Quickstart](./guides/board-bringup-quickstart.md)
 - [FPGA Board Vivado Setup](./guides/fpga-board-vivado-setup.md)
 - [SD Image Build Guide](./guides/sd-image-build.md)

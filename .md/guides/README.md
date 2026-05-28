@@ -4,6 +4,7 @@
 
 문서 역할 분리:
 
+- `board-setup-and-test-guide.md`: 보드 셋업 + 테스트 통합 실행 가이드(동기화 기준)
 - `board-bringup-quickstart.md`: 보드 초기 bring-up/접속 확인 전용
 - `fpga-board-vivado-setup.md`: Vivado 프로젝트 생성 + `.bit/.hwh` 빌드 전용
 - `sd-image-build.md`: SD 이미지(PS 중심 통합 이미지) 빌드 전용
@@ -14,11 +15,12 @@
 
 권장 진행 순서:
 
-1. `board-bringup-quickstart.md`
-2. `fpga-board-vivado-setup.md` (PL 산출물 준비)
-3. `sd-image-build.md` (필요 시, 전체 이미지 재빌드)
-4. `fw-setup-deep-dive.md`
-5. `sw-setup-deep-dive.md`
+1. `board-setup-and-test-guide.md` (통합 절차 요약)
+2. `board-bringup-quickstart.md`
+3. `fpga-board-vivado-setup.md` (PL 산출물 준비)
+4. `sd-image-build.md` (필요 시, 전체 이미지 재빌드)
+5. `fw-setup-deep-dive.md`
+6. `sw-setup-deep-dive.md`
 
 빠른 의사결정 트리:
 
